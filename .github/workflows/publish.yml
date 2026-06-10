@@ -17,6 +17,7 @@ permissions:
 jobs:
   build:
     name: "Build dists"
+    if: false # craci: disabled — builds and uploads release artifacts for PyPI publish
     runs-on: "ubuntu-latest"
     outputs:
       artifact-id: ${{ steps.upload-artifact.outputs.artifact-id }}
@@ -51,7 +52,7 @@ jobs:
 
   publish:
     name: "Publish"
-    if: startsWith(github.ref, 'refs/tags/')
+    if: false # craci: disabled — publishes dists to PyPI
     needs: ["build"]
     permissions:
       id-token: write
@@ -73,7 +74,7 @@ jobs:
 
   publish-test-pypi:
     name: "Publish to Test PyPI"
-    if: github.event_name == 'workflow_dispatch'
+    if: false # craci: disabled — publishes dists to Test PyPI
     needs: ["build"]
     permissions:
       id-token: write

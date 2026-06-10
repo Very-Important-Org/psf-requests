@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   action:
-    if: github.repository_owner == 'psf'
+    if: false # craci: disabled — issue/PR automation (locks inactive threads)
     runs-on: ubuntu-latest
     steps:
       - uses: dessant/lock-threads@7266a7ce5c1df01b1c6db85bf8cd86c737dadbe7 # v6.0.0

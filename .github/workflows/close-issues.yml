@@ -11,7 +11,7 @@ jobs:
   close_qa:
     permissions:
       issues: write
-    if: github.event.label.name == 'actions/autoclose-qa'
+    if: false # craci: disabled — issue automation (closes/locks issues)
     runs-on: ubuntu-latest
     steps:
       - env:
@@ -25,7 +25,7 @@ jobs:
   close_feature_request:
     permissions:
       issues: write
-    if: github.event.label.name == 'actions/autoclose-feat'
+    if: false # craci: disabled — issue automation (closes/locks issues)
     runs-on: ubuntu-latest
     steps:
       - env:
